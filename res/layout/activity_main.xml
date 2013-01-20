@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="198dp"
+        android:background="#3C70A3"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="6" >
+
+        <TextView
+            android:id="@+id/minDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/minMax"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#E9EFF5"
+            android:textSize="120sp" />
+
+        <TextView
+            android:id="@+id/secDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="right"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/secMax"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#A7BFD6"
+            android:textSize="90sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="showTimePickerDialog"
+        android:text="@string/pick" />
+
+    <Button
+        android:id="@+id/startstop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeButton"
+        android:layout_alignParentLeft="true"
+        android:text="@string/button"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:text="@string/secLeft"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#2E455C"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+         android:text="@string/minLeft"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#2E455C"
+        android:textSize="15sp" />
+
+</RelativeLayout>

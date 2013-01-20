@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MuteMate</string>
+    <string name="minMax">000</string>
+    <string name="secMax">00</string>
+    <string name="minLeft">Minutes left:"</string>
+    <string name="secLeft">Seconds left:"</string>
+
+    <string name="pick">Mute sound until?</string>
+    <string name="button">Start</string>
+</resources>
