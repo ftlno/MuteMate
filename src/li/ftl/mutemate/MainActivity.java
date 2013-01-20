@@ -43,7 +43,14 @@ public class MainActivity extends Activity implements Runnable {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		init();
+	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (startstopButton.getText().toString().equals("Abort")) {
+			startstopButton.setVisibility(View.VISIBLE);
+		}
 	}
 
 	private void init() {
