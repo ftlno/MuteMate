@@ -4,7 +4,7 @@ MuteMate
 Android Timed mute. - Just another timed mute, only better. :)
 
 If you need your phone to be silent for some time and you think you are probably gonna 
-forgot to turn the sound back on you've got a HUGE problem, this is were MuteMate comes to the rescue. 
+forget to turn the sound back on you've got a HUGE problem, this is were MuteMate comes to the rescue. 
 Set a time in the future and the sound will magically turn back on at the this very time you picked! (hopefully).
 
 Licence:
