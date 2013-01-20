@@ -23,6 +23,7 @@ https://play.google.com/store/apps/details?id=li.ftl.mutemate
 Thanks:
 -------
 *Thanks for the inspiration to develop and distribute free information.*
+*"Matz is nice so we are nice"*
 
 Best
 
