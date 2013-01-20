@@ -22,3 +22,8 @@ https://play.google.com/store/apps/details?id=li.ftl.mutemate
 
 
 *Thanks for the inspiration to develop and distribute free information.*
+
+Best
+
+Fredrik T Lillejordet
+http://ftl.li
