@@ -17,6 +17,7 @@ Google Play:
 ------------
 
 You can find it in Play store on the folllowing url:
+
 https://play.google.com/store/apps/details?id=li.ftl.mutemate
 
 
