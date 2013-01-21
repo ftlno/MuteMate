@@ -48,8 +48,10 @@ public class MainActivity extends Activity implements Runnable {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (startstopButton.getText().toString().equals("Abort")) {
-			startstopButton.setVisibility(View.VISIBLE);
+		if (runner == null) {
+			startstopButton.setText("Start");
+		} else {
+			startstopButton.setText("Abort");
 		}
 	}
 
@@ -84,7 +86,6 @@ public class MainActivity extends Activity implements Runnable {
 
 	public void unmuteSound() {
 		audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-		startstopButton.setVisibility(View.INVISIBLE);
 		startstopButton.setText("Start");
 		minutes = 0;
 		seconds = 0;
