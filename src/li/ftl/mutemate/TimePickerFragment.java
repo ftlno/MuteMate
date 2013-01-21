@@ -23,7 +23,6 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.view.View;
 import android.widget.TimePicker;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
@@ -44,7 +43,6 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 			minute += 60;
 		}
 		MainActivity.minutes = minute;
-		MainActivity.startstopButton.setVisibility(View.VISIBLE);
 		MainActivity.startstopButton.setText("Start");
 	}
 }
