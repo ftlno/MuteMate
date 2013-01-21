@@ -72,6 +72,33 @@ public class MainActivity extends Activity implements Runnable {
 		});
 	}
 
+	public void updateDisplay() {
+		String minPrint = "";
+		if (minutes < 100) {
+			if (minutes < 10) {
+				minPrint += "00";
+			} else {
+				minPrint += "0";
+			}
+		}
+		String secPrint = "";
+		if (seconds < 10) {
+			secPrint += "0";
+		}
+
+		minDisplay.setText(minPrint + minutes);
+		secDisplay.setText(secPrint + seconds);
+	}
+
+	private void showMessageToUser(final String message) {
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+	}
+
+	public void showTimePickerDialog(final View v) {
+		DialogFragment newFragment = new TimePickerFragment();
+		newFragment.show(getFragmentManager(), "timePicker");
+	}
+
 	private void muteSound() {
 		if (minutes > 0) {
 			isdurationValid();
@@ -94,13 +121,11 @@ public class MainActivity extends Activity implements Runnable {
 		stopThread();
 	}
 
-	private void showMessageToUser(final String message) {
-		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-	}
-
-	public void showTimePickerDialog(final View v) {
-		DialogFragment newFragment = new TimePickerFragment();
-		newFragment.show(getFragmentManager(), "timePicker");
+	public boolean isdurationValid() {
+		if (minutes > 0 && minutes < 999) {
+			return true;
+		}
+		return false;
 	}
 
 	public synchronized void startThread() {
@@ -108,24 +133,6 @@ public class MainActivity extends Activity implements Runnable {
 			runner = new Thread(this);
 			runner.start();
 		}
-	}
-
-	public void updateDisplay() {
-		String minPrint = "";
-		if (minutes < 100) {
-			if (minutes < 10) {
-				minPrint += "00";
-			} else {
-				minPrint += "0";
-			}
-		}
-		String secPrint = "";
-		if (seconds < 10) {
-			secPrint += "0";
-		}
-
-		minDisplay.setText(minPrint + minutes);
-		secDisplay.setText(secPrint + seconds);
 	}
 
 	public synchronized void stopThread() {
@@ -166,12 +173,5 @@ public class MainActivity extends Activity implements Runnable {
 			} catch (Exception e) {
 			}
 		}
-	}
-
-	public boolean isdurationValid() {
-		if (minutes > 0 && minutes < 999) {
-			return true;
-		}
-		return false;
 	}
 }
