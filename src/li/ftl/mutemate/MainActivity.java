@@ -105,7 +105,7 @@ public class MainActivity extends Activity implements Runnable {
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 			startThread();
 			startstopButton.setText("Abort");
-			showMessageToUser("The sound will be muted for " + minutes + " minutes");
+			showMessageToUser("Sound will be mute for " + minutes + " minutes");
 		} else {
 			showMessageToUser("Sorry, invalid time:" + minutes);
 		}
