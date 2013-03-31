@@ -191,10 +191,11 @@ public class MainActivity extends Activity implements Runnable {
 						}
 						seconds--;
 					}
-					if (minutes > 0) {
+
+					if (minutes >= 0) {
 						minutes--;
 					}
-				} while (minutes > 0);
+				} while (minutes >= 0);
 				minutes = 59;
 				hours--;
 

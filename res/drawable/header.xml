@@ -5,9 +5,8 @@
             <solid android:color="#363636"></solid>
         </shape>
     </item>
-    <!-- Body -->
     <item android:left="0dip"
-          android:bottom="4dp"
+          android:bottom="5dp"
           android:right="0dp">
         <shape>
             <solid android:color="@color/blue"></solid>
