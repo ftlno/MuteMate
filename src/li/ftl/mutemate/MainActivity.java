@@ -18,6 +18,7 @@ package li.ftl.mutemate;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,6 +40,7 @@ public class MainActivity extends Activity implements Runnable {
 	public static String total = "";
 	private static TextView totalDisplay, hourDisplay, minDisplay, secDisplay;
 	public static Button startstopButton;
+	SharedPreferences prefs;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -50,11 +52,8 @@ public class MainActivity extends Activity implements Runnable {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (runner == null) {
-			startstopButton.setText("Start");
-		} else {
-			startstopButton.setText("Abort");
-		}
+		SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+		total = prefs.getString("total", "");
 	}
 
 	private void init() {
@@ -63,7 +62,6 @@ public class MainActivity extends Activity implements Runnable {
 		hourDisplay = (TextView) findViewById(R.id.hours);
 		minDisplay = (TextView) findViewById(R.id.minutes);
 		secDisplay = (TextView) findViewById(R.id.seconds);
-
 		startstopButton = (Button) findViewById(R.id.startstop);
 		startstopButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(final View v) {
@@ -77,16 +75,28 @@ public class MainActivity extends Activity implements Runnable {
 	}
 
 	public void updateDisplay() {
+		totalDisplay.setText(total);
+		startstopButton.setText("Abort");
+		startstopButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stop, 0, 0, 0);
 		String hourText = "";
-		if (hours < 10) {
-			hourText += "0";
+		if (hours == 0) {
+			hourText = "00";
+
+		} else {
+			if (hours < 10) {
+				hourText += "0";
+			}
+			hourText += hours;
 		}
-		hourText += hours;
 		String minuteText = "";
-		if (minutes < 10) {
-			minuteText += "0";
+		if (minutes == 0) {
+			minuteText = "00";
+		} else {
+			if (minutes < 10) {
+				minuteText += "0";
+			}
+			minuteText += minutes;
 		}
-		minuteText += minutes;
 
 		String secondText = "";
 		if (seconds < 10) {
@@ -111,9 +121,11 @@ public class MainActivity extends Activity implements Runnable {
 		if (durationValid()) {
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 			startThread();
-			totalDisplay.setText(total);
 			startstopButton.setText("Abort");
 			startstopButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stop, 0, 0, 0);
+			SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+			editor.putString("total", total);
+			editor.commit();
 		} else {
 			showMessageToUser("Sorry, invalid time");
 		}
