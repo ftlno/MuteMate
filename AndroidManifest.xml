@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="li.ftl.mutemate"
-    android:versionCode="6"
-    android:versionName="1.5" >
+    android:versionCode="8"
+    android:versionName="1.7" >
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_small"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+         android:theme="@style/AppTheme"
+       >
         <activity
             android:name="li.ftl.mutemate.MainActivity"
-            android:label="@string/app_name" 
+            android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

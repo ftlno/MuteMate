@@ -37,10 +37,36 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 	@Override
 	public void onTimeSet(final TimePicker view, int hourOfDay, int minute) {
 		final Calendar c = Calendar.getInstance();
-		minute -= c.get(Calendar.MINUTE);
-		hourOfDay -= c.get(Calendar.HOUR_OF_DAY);
-		for (int i = hourOfDay; i > 0; i--) {
-			minute += 60;
+
+		int nowHour = c.get(Calendar.HOUR_OF_DAY);
+		int nowMinute = c.get(Calendar.MINUTE);
+
+		String now = "";
+		if (nowHour < 10) {
+			now += "0";
+		}
+		now += nowHour + ":";
+		if (nowMinute < 10) {
+			now += "0";
+		}
+		now += nowMinute;
+		String then = "";
+		if (hourOfDay < 10) {
+			then += "0";
+		}
+		then += hourOfDay + ":";
+		if (minute < 10) {
+			then += "0";
+		}
+		then += minute;
+
+		MainActivity.total = now + " - " + then;
+		minute -= nowMinute;
+		hourOfDay -= nowHour;
+
+		MainActivity.hours = hourOfDay;
+		if (minute > 0) {
+			--minute;
 		}
 		MainActivity.minutes = minute;
 		MainActivity.startstopButton.setText("Start");
