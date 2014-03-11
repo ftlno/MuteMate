@@ -22,7 +22,7 @@ https://play.google.com/store/apps/details?id=li.ftl.mutemate
 
 ###Screenshot
 ![Settings Window]
-(https://raw.github.com/ftlno/MuteMate/master/mutemate.png)
+(https://raw.github.com/ftlno/MuteMate/master/mutemate.jpg)
 
 Fredrik T Lillejordet
 
