@@ -20,7 +20,8 @@ You can find it in Play store on the folllowing url:
 
 https://play.google.com/store/apps/details?id=li.ftl.mutemate
 
-###Screenshot
+Screenshot:
+------------
 ![Settings Window]
 (https://raw.github.com/ftlno/MuteMate/master/mutemate.jpg)
 
